@@ -1,0 +1,36 @@
+
+ 
+<div>
+    <button type="button" class="btn btn-outline" style=" margin-left:1250px; margin-top:-75px; background-color: rgb(181, 153, 218); width:140px; margin-left: 33cm;" routerLink="/admin/admindash">Go Back</button>
+    </div>
+<table class="table table-striped" style="width:1300px;" >
+    <thead>
+        <tr>
+            <th>Employee Id</th>
+            <th>Name</th>
+            <th>post</th> 
+            <th>Type</th>   
+            <th>Date</th>
+            <th>Days </th>
+            
+        </tr>
+    </thead>
+
+    <tbody style="font-size: medium;;">
+        <tr *ngFor="let t of leavearr |paginate: { itemsPerPage: 5, currentPage: p }" >
+
+
+           <td>{{t.id}}</td>
+            <td>{{t.name}}</td> 
+            <td>{{t.post}}</td>
+            <td>{{t.type}}</td>
+            <td>{{t.leavedate}}</td>
+            <td>{{t.days}}</td>
+           
+            
+            
+            
+        </tr>
+    </tbody>
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

@@ -1,0 +1,53 @@
+
+   <div>
+        <button type="button" class="fixed-bottom" style=" background-color: rgb(253, 5, 5); width: 200px;" (click)="logout()"> Logout</button>
+        </div>
+<table class="table table-striped" >
+    <thead>
+        <tr>
+            <th> Id</th>
+            <th >Name</th>
+            <th>Post</th>    
+            <th >Gender</th>
+            <th>Email id</th>
+          
+        </tr>
+    </thead>
+
+    <tbody style="font-size: medium;;">
+        
+<tr>
+
+           <td>{{emparray.empid}}</td>
+            <td>{{emparray.name}}</td> 
+            <td>{{emparray.post}}</td>
+            <td>{{emparray.gender}}</td>
+            <td>{{emparray.email}}</td>
+            
+            
+            
+            
+        </tr>
+    </tbody>
+</table>
+<div>
+    <button type="submit" class="align-self-end btn btn-success " style="width:200px" [routerLink]="['/employee','update',emparray.id]">Edit Your Details</button>
+    </div>
+    <br>
+
+    <div>
+        <button type="submit" class="btn btn-primary" style="width:200px" [routerLink]="['/employee','editemployee']">Change Your password</button>
+        </div>
+        <br>
+
+        
+    <div>
+        <button type="submit" class="btn btn-primary" style="width:200px" [routerLink]="['/employee','addtimesheet']">Add Timesheet</button>
+        </div>
+        <br>
+
+        <div>
+            <button type="submit" class="btn btn-primary" style="height: 30px;" [routerLink]="['/employee','leave']">Apply Leave</button>
+            </div>
+    
+    

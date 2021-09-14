@@ -1,0 +1,65 @@
+
+    <button type="submit" class="btn btn-primary" style="margin-right: 33cm;background-color: rgb(0, 183, 255);" routerLink="/admin/create">ADD NEW EMPLOYEE</button>
+    <br><br>
+
+
+    <div>
+        <button type="button" class="btn-outline-success" style="margin-left: 33cm; width:140px;background-color: rgb(0,183,255)" routerLink="/admin/timesheet">TIMESHEET</button>
+    </div>
+    <br>
+
+
+
+<div class="col-sm-4" >
+    <input type="text" name="search" placeholder="search...." [(ngModel)]="term">
+</div> 
+
+
+
+    <div class="btn-bot">
+        <button type="button" class="btn btn-outline-danger" style="background-color:rgb(0,183,255);width:140px;margin-left:1250px; margin-top:-75px" routerLink="/admin/leaveApp">Leave Requests </button>
+    
+    </div>
+    <br>
+    <br>
+    
+
+
+
+    <button type="button" class="btn btn-outline" style="margin-left:1250px; margin-top:-75px; background-color: rgb(253, 5, 5); width:140px; margin-left: 33cm;" (click)="logout()" > Logout</button>
+<div class="row"> 
+    <br>
+
+
+<table class="table table-striped align-content:right" style="width:1100px;" >
+    <thead>
+        <tr>
+            <th (click)="changeOrder('empid')">Id</th>
+            <th (click)="changeOrder('name')">Name</th>
+            <th>Post</th>    
+            <th >Gender</th>
+            <th>Email</th>
+            <th>Action</th>
+          
+        </tr>
+    </thead>
+
+    <tbody style="font-size: medium;;">
+        <tr *ngFor="let e of emparray |paginate: { itemsPerPage: 5, currentPage: p }|filter:term| orderBy: order" >
+
+
+           <td>{{e.empid}}</td>
+            <td>{{e.name}}</td> 
+            <td>{{e.post}}</td>
+            <td>{{e.gender}}</td>
+            <td>{{e.email}}</td>
+            
+            <td ><button type="submit" style=" background-color: rgb(5, 183, 253);" class="btn btn-success" [routerLink]="['/admin','edit',e.id]">Edit</button></td>
+            <td ><button type="submit" style=" background-color: rgb(253, 5, 5);" class="btn btn-outline-danger" (click)="deleteEmployee(e.id)">Delete</button></td>
+           
+            
+        </tr>
+    </tbody>
+</table>
+ 
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

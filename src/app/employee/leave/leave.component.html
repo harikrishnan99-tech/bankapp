@@ -1,0 +1,54 @@
+<div class="loginBox"  style="height: 400px;width: 400px;border-style: inset;border-radius: 10px;border-width: 5px; margin-left:  550px ;">
+<form #frmval=ngForm name="myform" class="form" (ngSubmit)="addleave(frmval.value)" class="form container">
+    
+    
+    <div class="form-group">
+        <label for="post">Post</label>
+        <select name="post" id="post" class ="form-control" ngModel required [ngModel]="addleavearr.post" >
+            <option value=""></option>
+        <option value="Software Developer">Software Developer</option>
+        <option value="Data Analyst">Data Analyst</option>
+        <option value="HR">HR</option>
+        <option value="Testing">Testing</option>
+        <option value="Trainer">Trainer</option>
+        <option value="System Analyst">System Analyst</option>
+       </select>
+       </div>
+       <br>
+
+        <div class="form-group">
+            <label for="type">Leave Type</label>
+    
+            <select name="type" id="type" class ="form-control" ngModel required [ngModel]="addleavearr.type" >
+                <option value=""></option>
+            <option value="maternity">Maternity</option>
+            <option value="paternity">Paternity</option>
+            <option value="sl">SL</option>
+            <option value="el">EL</option>
+            <option value="other">Other</option>
+            </select>
+            </div>
+            <br>
+
+            <div class="form-group">
+                <label for="text">Date</label>
+                <input type="text" id="leavedate" name="leavedate" ngModel required [ngModel]="addleavearr.leavedate">
+            </div>
+            <br>
+
+            <div class="form-group">
+                <label for="text">Days</label>
+                <input type="text" id="days" name="days" ngModel required [ngModel]="addleavearr.days">
+            </div>
+            <br>
+           
+           
+        
+    
+    
+    <button type="submit" style="background-color: springgreen;" name="button" >Apply</button>
+</form>
+</div>
+        
+   
+

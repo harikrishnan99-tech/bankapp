@@ -1,0 +1,18 @@
+<form #frmval=ngForm name="myform" class="form" (ngSubmit)="addtime(frmval.value)" class="form container">
+    <label for="date">Date</label>
+    <input type="date" id="date" name="date" ngModel required [ngModel]="addtimearr.date">
+    
+    <label>Start Time</label>
+    <input type="text" id="start" name="start" ngModel required [ngModel]="addtimearr.start">
+
+
+    <label>End Time</label>
+    <input type="text" id="end" name="end" ngModel required [ngModel]="addtimearr.end">
+
+       
+    <label>Working Hours</label>
+    <input type="text" id="totalhours" name="totalhours" ngModel required [ngModel]="addtimearr.totalhours">
+    
+    
+    <button type="submit" style="background-color: springgreen;" name="button" >submit</button>
+    </form>
